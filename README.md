@@ -74,5 +74,19 @@ Environment
 
 ---
 
+### Citation
+
+If you use this code or build upon it, please cite our paper:
+```
+@Article{swin-wisdom-tooth,
+  author  = {Yung-Chun Chang, Chih-Hao Ku, Yoichi Ohiro, Dennis Chun-Yu Ho, Chih-Yuan Fang},
+  title   = {Wisdom Tooth Detection in Panoramic Radiographs using Swin Transformer and Multi-Expert Consensus},
+  journal = {Journal to be Assigned},
+  year    = {2025}
+}
+```
+
+---
+
 ### License
 This project is licensed under the Apache-2.0 License - see the LICENSE file in the repository for details.
