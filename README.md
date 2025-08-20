@@ -5,35 +5,42 @@ This repository provides code for “Wisdom Tooth Detection in Panoramic Radiogr
 It contains:
 1. train_10fold.ipynb: A 10-fold training and cross-validation notebook on panoramic radiographs which outputs a csv file with predictions and targets.
 2. compute_metrics.ipynb: A metrics notebook that evaluates predictions per fold and computes aggregate results.
-3. 5505-Dataset.csv: A csv file with image paths and labels.
-4. Images: A folder containing 5505 panoramic images in jpg format for training.
 
 ---
 
 ### Repository structure
-
+To run the code, the project root should be organized as follows and must include a Dataset.csv file that indexes the images:
 ```
 .
-├── train_10fold.ipynb       # Train and evaluate with 10-fold CV, outputs predictions CSV
-├── Metrics.ipynb            # Load predictions CSV, compute metrics per fold and averaged
-├── 5505-Dataset.csv         # Main dataset index: image paths and labels
-├── images/                  # images folder
-├── outputs/                 # Stores predictions/targets CSV files
+├── train_10fold.ipynb    # Train and evaluate with 10-fold CV, outputs predictions CSV
+├── compute_metrics.ipynb # Load predictions CSV, compute metrics per fold and averaged
+├── Dataset.csv           # Dataset index: image paths and corresponding labels
+├── images/               # Folder containing all panoramic radiograph images in jpg format
+├── outputs/              # Stores prediction/target CSVs, model weights, logs, etc.
 ├── LICENSE
 └── README.md
 ```
 
 ---
 
-### Dataset format
+### Dataset
 
-The dataset is provided via 5505-Dataset.csv, located in the repo root alongside the notebooks.
+The dataset analyzed in this study is not publicly available due to institutional and privacy restrictions. Access may be granted upon reasonable request to the corresponding author.
 
-This CSV contains the following columns:
-* ImagePaths: path to the panoramic images in the images folder.
-* Right Upper-0, Left Upper-1, Left Lower-2, Right Lower-3: Each column here contains binary labels (0 = absent, 1 = present) for the corresponding wisdom tooth position.
-The number after the dash (e.g., -0, -1, -2, -3) indicates the index of that position in the 4D Labels array.
-* Labels: True labels in 4D array (e.g. [1, 0, 1, 1]). 
+The dataset is not included in this repository. To run the code on your own dataset, you need to prepare a CSV file, Dataset.csv, with the following columns:
+
+* ImagePaths: relative or absolute path to each panoramic radiograph image.
+* Labels: ground-truth labels as a 4-element array, in the order:
+  * Right Upper, Left Upper, Left Lower, Right Lower
+  * Each element is binary (0 = absent, 1 = present).
+
+Example:
+```
+ImagePaths,Labels
+images/image1.jpg,[0,0,0,0]
+images/image2.jpg,[1,1,1,1]
+images/image3.jpg,[0,0,1,0]
+```
 
 ---
 
