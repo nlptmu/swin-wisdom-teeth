@@ -27,7 +27,7 @@ To run the code, the project root should be organized as follows and must includ
 
 The dataset analyzed in this study is not publicly available due to institutional and privacy restrictions. Access may be granted upon reasonable request to the corresponding author.
 
-The dataset is not included in this repository. To run the code on your own dataset, you need to prepare a CSV file, Dataset.csv, with the following columns:
+To run the code on your own dataset, you need to prepare a CSV file, Dataset.csv, with the following columns:
 
 * ImagePaths: relative or absolute path to each panoramic radiograph image.
 * Labels: ground-truth labels as a 4-element array, in the order:
