@@ -57,7 +57,8 @@ train_10fold.ipynb
 * ProgressTable
 
 compute_metrics.ipynb
-* torch, torchmetrics
+* torch
+* torchmetrics
 
 Environment
 * Python 3.10.14
